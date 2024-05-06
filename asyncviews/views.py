@@ -12,14 +12,7 @@ async def http_call_async():
         r = await client.get("https://httpbin.org")
         print(r)
         
-        
-def http_call_sync():
-    for num in range(1, 6):
-        sleep(1)
-        print(num)
-    r = httpx.get("https://httpbin.org")
-    print(r)
-        
+
         
 async def async_view(request):
     loop = asyncio.get_event_loop()
@@ -27,6 +20,3 @@ async def async_view(request):
     return HttpResponse("Non-blocking HTTP request")
 
 
-def sync_view(request):
-    http_call_sync()
-    return HttpResponse("Blocking HTTP request")
